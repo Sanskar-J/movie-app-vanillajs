@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+:root{
+    --primary-color:#6d6969;
+    --secondry-color:#19191b;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--primary-color);
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+}
+header{
+    padding: 1rem;
+    background-color: var(--secondry-color);
+}
+h1{
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Bangers',sans-serif;
+    font-size: 44px;
+}
+a{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    top: -30px;
+}
+/* .search{
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+}
+.search::placeholder{
+    background-color: #7378c5;
+}
+.search:focus{
+    outline: none;
+    background-color: var(--primary-color);
+} */
+h2{
+    text-align: center;
+    color: white;
+}
+.search{
+    position: relative;
+    height: 50px;
+    /* left: -50px; */
+}
+.search .input{
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 20px;
+    transition: width 0.3s ease;
+}
+.btn{
+
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+.btn:focus,
+.input:focus {
+    outline: none;
+}
+.search.active .input{
+    width: 200px;
+}
+
+.search.active .btn{
+    transform: translateX(198px);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.movie{
+    width: 300px;
+    margin: 1rem;
+    background-color: var(--secondry-color);
+    box-shadow: 0 4px 5px rgba(0, 0,0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+}
+.movie img{
+    width: 100%;
+}
+.movie-info{
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+.movie-info h3{
+    margin-top: 0;
+}
+.movie-info span{
+    background-color: var(--primary-color);
+    padding: .25rem .5rem;
+    font-weight: bold;
+}
+.movie-info span.green{
+    color: lightgreen;
+}
+.movie-info span.orange{
+    color: orange;
+}
+.movie-info span.red{
+    color: red;
+}
+
+.overview{
+    background-color: #fff;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
+/* scroll part */
+
+.box{
+    transform: translateX(200%);
+    transition: transform 0.4s ease;
+}
+.box:nth-of-type(even){
+    transform: translateX(-200%);
+}
+.box.show{
+    transform: translateX(0);
+}
