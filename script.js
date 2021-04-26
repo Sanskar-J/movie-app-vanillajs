@@ -101,5 +101,20 @@ function getClassByRate(vote){
     return 'red';
 }
 
+//toggle mode part
+const toggle=document.querySelector('.toggle');
+const ball=document.querySelector('.ball');
+
+toggle.addEventListener('click',()=>{
+    const html=document.querySelector('html');
+    if(html.classList.contains('dark')){
+        html.classList.remove('dark');
+        ball.style.animation='slideOff 0.3s linear forwards'
+    }
+    else{
+        html.classList.add('dark');
+        ball.style.animation='slideOn 0.3s linear forwards'
+    }
+})
 
 

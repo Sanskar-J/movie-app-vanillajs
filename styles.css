@@ -1,12 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 :root{
-    --primary-color:#6d6969;
+    --font-color:#fff;
+    --primary-color:#3b3b3b;
     --secondry-color:#19191b;
 }
+
+html{
+    transition: all 0.5s ease-in;
+}
+html.dark{
+    --font-color:#000;
+    --primary-color:rgb(190, 190, 190);
+    --secondry-color:#fff;
+}
+
+html.dark{
+    background-color: #111;
+    color: var(--primary-color);
+}
+
 *{
     box-sizing: border-box;
 }
+
+.toggle{
+    width: 80px;
+    height: 40px;
+    background-color: var(--font-color);
+    border-radius: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    display: inline-block;
+    margin: 0 15px 0;
+}
+.ball{
+    background: var(--secondry-color);
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@keyframes slideOn{
+    0%{
+        transform: translateX(0) scale(1);
+    }
+    50%{
+        transform: translateX(20px) scale(1.2);
+    }
+    100%{
+        transform: translateX(40px) scale(1);
+    }
+}
+@keyframes slideOff{
+    0%{
+        transform: translateX(40px) scale(1);
+    }
+    50%{
+        transform: translateX(20px) scale(1.2);
+    }
+    100%{
+        transform: translateX(0) scale(1);
+    }
+}
+
 body{
     background-color: var(--primary-color);
     font-family: 'Poppins',sans-serif;
@@ -18,7 +82,7 @@ header{
 }
 h1{
     cursor: pointer;
-    color: white;
+    color: var(--font-color);
     font-weight: bold;
     text-align: center;
     font-family: 'Bangers',sans-serif;
@@ -27,7 +91,7 @@ h1{
 a{
     display: flex;
     justify-content: center;
-    color: white;
+    color: var(--font-color);
     text-decoration: none;
     position: relative;
     top: -30px;
@@ -50,7 +114,7 @@ a{
 } */
 h2{
     text-align: center;
-    color: white;
+    color: var(--font-color);
 }
 .search{
     position: relative;
@@ -58,7 +122,8 @@ h2{
     /* left: -50px; */
 }
 .search .input{
-    background-color: #fff;
+    background-color: var(--font-color);
+    color: var(--secondry-color);
     border: 0;
     font-size: 18px;
     padding: 15px;
@@ -68,8 +133,9 @@ h2{
 }
 .btn{
 
-    background-color: #fff;
+    background-color:var(--font-color);
     border: 0;
+    color: var(--secondry-color);
     cursor: pointer;
     font-size: 24px;
     position: absolute;
@@ -136,7 +202,7 @@ main{
 }
 
 .overview{
-    background-color: #fff;
+    background-color:var(--font-color);
     padding: 2rem;
     position: absolute;
     left: 0;
@@ -151,7 +217,9 @@ main{
     transform: translateY(0);
 }
 /* scroll part */
-
+.movie-info h3{
+    color: var(--font-color);
+}
 .box{
     transform: translateX(200%);
     transition: transform 0.4s ease;
